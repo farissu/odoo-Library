@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="Library_System_root" name="Library Management"
+                  web_icon="Library_System,static/description/icon.svg" sequence="1"
+                  groups="Library_System.group_Library_System_guru"/>
+        <menuitem id="bangunan_menu" name="Bangunan" parent="Library_System_root" sequence="2"
+                  groups="Library_System.group_Library_System_admin"/>
+        <menuitem id="warga_sekolah_menu" name="Warga Sekolah" parent="Library_System_root" sequence="3"
+                  groups="Library_System.group_Library_System_guru"/>
+    </data>
+</odoo>
