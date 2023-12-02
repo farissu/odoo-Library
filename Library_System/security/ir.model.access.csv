@@ -1,8 +1,13 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_Library_gedung_admin,library.gedung,model_Library_gedung,Library_System.group_Library_System_admin,1,1,1,1
-access_Library_kelas_admin,library.kelas,model_Library_kelas,Library_System.group_Library_System_admin,1,1,1,1
-access_Library_pelajaran_admin,library.pelajaran,model_Library_pelajaran,Library_System.group_Library_System_admin,1,1,1,1
+access_Library_buku_admin,library.buku,model_library_buku,Library_System.group_Library_System_admin,1,1,1,1
+access_Library_pelajaran_admin,library.pelajaran,model_library_pelajaran,Library_System.group_Library_System_admin,1,1,1,1
+access_Library_penerbit_admin,library.penerbit,model_library_penerbit,Library_System.group_Library_System_admin,1,1,1,1
+access_Library_penulis_admin,library.penulis,model_library_penulis,Library_System.group_Library_System_admin,1,1,1,1
+access_Library_pinjam_admin,library.pinjam,model_library_pinjam,Library_System.group_Library_System_admin,1,1,1,1
+access_Library_kembali_admin,library.kembali,model_library_kembali,Library_System.group_Library_System_admin,1,1,1,1
 
-access_Library_kelas_guru,library.kelas,model_Library_kelas,Library_System.group_Library_System_guru,1,0,0,0
-access_Library_pelajaran_guru,library.pelajaran,model_Library_pelajaran,Library_System.group_Library_System_guru,1,1,1,0
-access_Library_murid_guru,res.partner,model_res_partner,Library_System.group_Library_System_guru,1,1,0,0
+access_Library_buku_guru,library.buku,model_library_buku,Library_System.group_Library_System_guru,1,0,0,0
+access_Library_pelajaran_guru,library.pelajaran,model_library_pelajaran,Library_System.group_Library_System_guru,1,1,1,0
+access_Library_Anggota_guru,res.partner,model_res_partner,Library_System.group_Library_System_guru,1,1,0,0
+access_Library_penerbit_guru,library.penerbit,model_library_penerbit,Library_System.group_Library_System_guru,1,1,1,0
+access_Library_penulis_guru,library.penulis,model_library_penulis,Library_System.group_Library_System_guru,1,1,1,0

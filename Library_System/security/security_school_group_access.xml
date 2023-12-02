@@ -19,7 +19,7 @@
 
         <record id="rule_Library_System_guru" model="ir.rule">
             <field name="name">Rule See His Own</field>
-            <field name="model_id" ref="model_Library_pelajaran" />
+            <field name="model_id" ref="model_library_buku" />
             <field name="domain_force">['|', ('create_uid','=',user.id),
                 ('guru_id','=',user.id)]</field>
             <field name="groups" eval="[(4, ref('Library_System.group_Library_System_guru'))]" />
@@ -27,7 +27,7 @@
 
         <record id="rule_Library_System_admin" model="ir.rule">
             <field name="name">Rule See All</field>
-            <field name="model_id" ref="model_Library_pelajaran" />
+            <field name="model_id" ref="model_library_buku" />
             <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('Library_System.group_Library_System_admin'))]" />
         </record>

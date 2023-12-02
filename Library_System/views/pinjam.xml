@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="Library_pinjam_form_view" model="ir.ui.view">
+            <field name="name">library.pinjam.form.view</field>
+            <field name="model">library.pinjam</field>
+            <field name="arch" type="xml">
+                <form string="pinjam">
+                    <header>
+                        <field name="status" widget="statusbar"
+                        statusbar_visible="Rancangan, Dipinjam, Sudah Kembali" />
+                      <button type="object" name="Dipinjam_button" string="Dipinjam" />
+                      <button type="object" name="selesai_button" string="Sudah Kembali" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="Anggota_pinjam"/>
+                                <field name="Buku_pinjam"/>
+                                <field name="Tanggal_pinjam"/>
+                                <field name="Batas_pinjam"/>
+                                <!-- <field name="Pengelola_perpustakaan"/> -->
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="Library_pinjam_tree_view" model="ir.ui.view">
+            <field name="name">library.pinjam.tree.view</field>
+            <field name="model">library.pinjam</field>
+            <field name="arch" type="xml">
+                <tree string="pinjam">
+                    <field name="Anggota_pinjam"/>
+                    <field name="Buku_pinjam"/>
+                    <field name="Tanggal_pinjam"/>
+                    <field name="Batas_pinjam"/>
+                    <!-- <field name="Pengelola_perpustakaan"/> -->
+                </tree>
+            </field>
+        </record>
+
+        <record id="Library_pinjam_search_view" model="ir.ui.view">
+            <field name="name">library.pinjam.search.view</field>
+            <field name="model">library.pinjam</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="Anggota_pinjam"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="Library_pinjam_act_window" model="ir.actions.act_window">
+            <field name="name">pinjam</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">library.pinjam</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Belum Ada pinjam
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="pinjam" id="Library_pinjam_menu" parent="seting_menu" sequence="2"
+                  action="Library_pinjam_act_window"/>
+
+
+    </data>
+</odoo>

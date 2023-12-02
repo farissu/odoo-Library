@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="Library_buku_form_view" model="ir.ui.view">
+            <field name="name">library.buku.form.view</field>
+            <field name="model">library.buku</field>
+            <field name="arch" type="xml">
+                <form string="buku">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="No_Inventaris"/>
+                                <field name="Judul_buku"/>
+                                <field name="Penulis"/>
+                                <field name="Tahun_terbit"/>
+                                <field name="Penerbit"/>
+                                <field name="ISBN"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="Library_buku_tree_view" model="ir.ui.view">
+            <field name="name">library.buku.tree.view</field>
+            <field name="model">library.buku</field>
+            <field name="arch" type="xml">
+                <tree string="buku">
+                    <field name="No_Inventaris"/>
+                    <field name="Judul_buku"/>
+                    <field name="Penulis"/>
+                    <field name="Tahun_terbit"/>
+                    <field name="Penerbit"/>
+                    <field name="ISBN"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="Library_buku_search_view" model="ir.ui.view">
+            <field name="name">library.buku.search.view</field>
+            <field name="model">library.buku</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="No_Inventaris"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="Library_buku_act_window" model="ir.actions.act_window">
+            <field name="name">Buku</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">library.buku</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Belum Ada buku
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Buku" id="Library_buku_menu" parent="bangunan_menu" sequence="2"
+                  action="Library_buku_act_window"/>
+
+    </data>
+</odoo>

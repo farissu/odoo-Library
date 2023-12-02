@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="Library_penulis_form_view" model="ir.ui.view">
+            <field name="name">library.penulis.form.view</field>
+            <field name="model">library.penulis</field>
+            <field name="arch" type="xml">
+                <form string="penulis">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="Judul_penulis"/>
+                                <field name="Nama"/>
+                                <field name="Tahun_terbit"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="Library_penulis_tree_view" model="ir.ui.view">
+            <field name="name">library.penulis.tree.view</field>
+            <field name="model">library.penulis</field>
+            <field name="arch" type="xml">
+                <tree string="penulis">
+                    <field name="Judul_penulis"/>
+                    <field name="Nama"/>
+                    <field name="Tahun_terbit"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="Library_penulis_search_view" model="ir.ui.view">
+            <field name="name">library.penulis.search.view</field>
+            <field name="model">library.penulis</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="Judul_penulis"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="Library_penulis_act_window" model="ir.actions.act_window">
+            <field name="name">Penulis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">library.penulis</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Belum Ada penulis
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Penulis" id="Library_penulis_menu" parent="warga_sekolah_menu" sequence="4"
+                  action="Library_penulis_act_window"/>
+
+    </data>
+</odoo>

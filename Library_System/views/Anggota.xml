@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="Library_Anggota_form_view" model="ir.ui.view">
+            <field name="name">Library.Anggota.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='contact_addresses']" position="attributes">
+                    <attribute name="autofocus"></attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='contact_addresses']" position="before" autofocus="autofocus">
+                    <page name='Library_System' string="Library Management">
+                        <group>
+                            <field name="is_murid" widget="boolean_toggle"
+                                   groups="Library_System.group_Library_System_admin"/>
+                            <field name="nis" required="1"/>
+                            <field name="age"/>
+                            <field name="gender" widget="radio"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="Library_Anggota_kanban_view" model="ir.ui.view">
+            <field name="name">Library.Anggota.kanban.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <field name="active" position="after">
+                    <field name="nis"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                </field>
+
+                <xpath expr="//li[@class='o_text_overflow']" position="after">
+                    <li>
+                        <field name="nis"/>
+                    </li>
+                    <li>
+                        <field name="age"/>
+                    </li>
+                    <li>
+                        <field name="gender"/>
+                    </li>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="Library_Anggota_tree_view" model="ir.ui.view">
+            <field name="name">Library.Anggota.tree.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <field name="display_name" position="before">
+                    <field name="nis"/>
+                </field>
+                <field name="display_name" position="after">
+                    <field name="age"/>
+                    <field name="gender"/>
+                </field>
+            </field>
+        </record>
+
+      
+
+        <record id="Library_Anggota_act_window" model="ir.actions.act_window">
+            <field name="name">Anggota</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('is_murid', '=', True)]</field>
+            <field name="context">{'default_is_murid': True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Belum Ada Anggota
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="Anggota" id="Library_Anggota_menu" parent="warga_sekolah_menu" sequence="2"
+                  action="Library_Anggota_act_window"/>
+
+    </data>
+</odoo>

@@ -1,7 +1,7 @@
 from odoo import fields, models, api
 
 
-class LibraryMurid(models.Model):
+class SchoolAnggota(models.Model):
     _inherit = 'res.partner'
 
     is_murid = fields.Boolean(string="Murid")
@@ -11,4 +11,4 @@ class LibraryMurid(models.Model):
         ('male', 'Male'),
         ('female', 'Female'),
     ], string="Gender")
-    kelas_id = fields.Many2one(string="Kelas", comodel_name="library.kelas")
+    kelas_id = fields.Many2one(string="Kelas", comodel_name="library.buku")

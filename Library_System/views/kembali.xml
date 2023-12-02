@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="Library_kembali_form_view" model="ir.ui.view">
+            <field name="name">library.kembali.form.view</field>
+            <field name="model">library.kembali</field>
+            <field name="arch" type="xml">
+                <form string="kembali">
+                    <header>
+                        <field name="status" widget="statusbar"
+                        statusbar_visible="Rancangan,Sudah Kembali" />
+                      <button type="object" name="selesai_button" string="Sudah Kembali" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="Dokumen_kembali"/>
+                                <field name="Tanggal_kembali"/>
+                                <field name="Pengelola_pinjam"/>
+                                <!-- <field name="Pengelola_perpustakaan"/> -->
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="Library_kembali_tree_view" model="ir.ui.view">
+            <field name="name">library.kembali.tree.view</field>
+            <field name="model">library.kembali</field>
+            <field name="arch" type="xml">
+                <tree string="kembali">
+                    <field name="Dokumen_kembali"/>
+                    <field name="Tanggal_kembali"/>
+                    <field name="Pengelola_pinjam"/>
+                    <!-- <field name="Pengelola_perpustakaan"/> -->
+                </tree>
+            </field>
+        </record>
+
+        <record id="Library_kembali_search_view" model="ir.ui.view">
+            <field name="name">library.kembali.search.view</field>
+            <field name="model">library.kembali</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="Dokumen_kembali"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="Library_kembali_act_window" model="ir.actions.act_window">
+            <field name="name">kembali</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">library.kembali</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Belum Ada kembali
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="kembali" id="Library_kembali_menu" parent="seting_menu" sequence="2"
+                  action="Library_kembali_act_window"/>
+
+
+    </data>
+</odoo>

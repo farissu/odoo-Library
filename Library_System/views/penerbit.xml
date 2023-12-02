@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="Library_penerbit_form_view" model="ir.ui.view">
+            <field name="name">library.penerbit.form.view</field>
+            <field name="model">library.penerbit</field>
+            <field name="arch" type="xml">
+                <form string="penerbit">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="Judul_penerbit"/>
+                                <field name="Nama"/>
+                                <field name="Tahun_terbit"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="Library_penerbit_tree_view" model="ir.ui.view">
+            <field name="name">library.penerbit.tree.view</field>
+            <field name="model">library.penerbit</field>
+            <field name="arch" type="xml">
+                <tree string="penerbit">
+                    <field name="Judul_penerbit"/>
+                    <field name="Nama"/>
+                    <field name="Tahun_terbit"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="Library_penerbit_search_view" model="ir.ui.view">
+            <field name="name">library.penerbit.search.view</field>
+            <field name="model">library.penerbit</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="Judul_penerbit"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="Library_penerbit_act_window" model="ir.actions.act_window">
+            <field name="name">Penerbit</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">library.penerbit</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Belum Ada penerbit
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Penerbit" id="Library_penerbit_menu" parent="warga_sekolah_menu" sequence="2"
+                  action="Library_penerbit_act_window"/>
+
+    </data>
+</odoo>
